@@ -1,0 +1,26 @@
+{% extends 'core/base.html' %}
+{% block title %}
+{% endblock %}
+{% block login %}
+{% endblock %}
+{% block logout %}
+{% endblock %}
+{% block navbar %}
+{% endblock %}
+{% block navbar2 %}
+{% endblock %}
+{% block slider %}
+{% endblock %}
+{% load static %}
+{% block contenido %}
+<br>
+<form method="post">
+    {% csrf_token %}
+  {{form.as_p}}
+     <button
+     class="btn btn-success btn-sm"
+     type="submit">Crear </button>
+  
+</form>
+
+{% endblock contenido %}

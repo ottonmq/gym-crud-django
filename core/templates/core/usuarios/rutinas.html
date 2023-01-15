@@ -1,0 +1,62 @@
+{% extends 'core/base.html' %}
+{% block navbar %}
+{% endblock %}
+{% block title %}
+{% endblock %}
+{% block slider %}
+{% endblock %}
+{% block contenido %}
+{% block footer %}
+{% endblock %}
+{% load static %}
+
+
+<section class="portfolio" id="portfolio">
+      <div class="container">
+        <h2 class="text-center text-uppercase text-secondary mb-0">Tus rutinas creadas </h2>
+        
+        <h2>{{request.user.username}}</h2>
+        <hr class="star-dark mb-5">
+       <div class="row">
+             {% for a in object_list %}
+          <div class="card col-md-6 col-lg-4" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">nombre : {{a.nombre}}</h5>
+              <br>
+              <br>
+              <h5 class="card-title">descripción : {{a.info}}</h5>
+              <br>
+           
+
+                 <a  href
+                 ="{% url 'rutinad' a.id %}
+                 " class="btn btn-danger btn-sm"
+                 >Borrar</a>
+                 <br>
+                 <br>
+                 <br>
+                 <p><label><input type="checkbox" id="cbox1" value="first_checkbox"
+              class="btn btn-success btn-sm"
+                > Hecha</label><br>
+                 </p>
+                      <br>
+                    </div>  
+                      <hr class="star-dark mb-5"
+                      </div>
+            </div>
+          </div>
+          {%empty%}
+            <h1>No hay datos todavía :(</h1>
+       {%endfor%}
+         
+
+       </div>
+      </div>
+    </section>
+  
+  
+ 
+
+           
+  
+{% endblock contenido %}

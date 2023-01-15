@@ -1,0 +1,22 @@
+{% extends 'core/base.html' %}
+{% block navbar %}
+{% endblock %}
+{% block title %}
+{% endblock %}
+{% block slider %}
+{% endblock %}
+{% block contenido %}
+
+    <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a 
+            href="{% url 'home' %}"
+            >Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{request.user.username}}</li>
+          </ol>
+        </nav>
+            
+{% endblock contenido %}
+{% block footer %}
+{% endblock %}
+

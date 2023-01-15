@@ -1,0 +1,44 @@
+{% extends 'core/base.html' %}
+{% block navbar %}
+{% endblock %}
+{% block title %}
+{% endblock %}
+{% block slider %}
+{% endblock %}
+{% block footer %}
+{% endblock %}
+{% block contenido %}
+
+<section class="portfolio" id="portfolio">
+      <div class="container">
+        <h2 class="text-center text-uppercase text-secondary mb-0">Datos personales</h2>
+        <hr class="star-dark mb-5">
+       <div class="row">
+             {% for a in object_list %}
+          <div class="card col-md-6 col-lg-4" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">nombre : {{a.nombre}}</h5>
+              <h5 class="card-title">apellidos : {{a.apellidos}}</h5>
+              <h5 class="card-title">sexo : {{a.sexo}}</h5>
+                   
+              <h5 class="card-title">dui : {{a.dui}}</h5>
+                            <h5 class="card-title">entrenamiento : {{a.curso.entrenamiento}}</h5>
+                              <h5 class="card-title">fecha de pago : {{a.fecha_pago}}</h5>
+                               <h5 class="card-title">nombre de usuario : {{a.user.username}}</h5>
+                
+                <h5 class="card-title" >correo : {{a.user.email}}</h5>
+               
+                                
+                      <hr class="star-dark mb-5">
+            </div>
+          </div>
+          {%empty%}
+            <h1>No estas matriculado :(</h1>
+          {%endfor%}
+         
+
+       </div>
+      </div>
+    </section>
+  
+{% endblock contenido %}

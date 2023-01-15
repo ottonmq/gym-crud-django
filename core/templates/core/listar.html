@@ -1,0 +1,28 @@
+{% extends 'core/base.html' %}
+{% block contenido %}
+  
+  
+<section class="portfolio" id="portfolio">
+      <div class="container">
+        <h2 class="text-center text-uppercase text-secondary mb-0">Entrenamientos</h2>
+        <hr class="star-dark mb-5">
+       <div class="row">
+          {% for a in autos %}
+          <div class="card col-md-6 col-lg-4" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">{{a.entrenamiento}}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">{{a.precio}}</h6>
+              <p class="card-text">{{a.horario}}</p>
+                      <hr class="star-dark mb-5">
+            </div>
+          </div>
+          {%empty%}
+            <h1>No hay entrenamientos :(</h1>
+          {%endfor%}
+         
+
+       </div>
+      </div>
+    </section>
+  
+{% endblock contenido %}

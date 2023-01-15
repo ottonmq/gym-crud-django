@@ -1,0 +1,30 @@
+{% extends 'core/base.html' %}
+{% block login %}
+{% endblock %}
+{% block navbar %}
+{% endblock %}
+{% block navbar2 %}
+{% endblock %}
+{% block slider %}
+{% endblock %}
+{% block contenido %}
+
+<div class="r">
+  <h2>Iniciar sesión</h2>
+<form method="POST">
+    {{ form.as_p }}
+    {% csrf_token %}
+    <br>
+    <button type="submit">Login</button>
+    </div>
+</form>
+
+<br>
+<a class="btn btn-success btn-sm"
+href="/registrar">Registrar usuario</a>
+<br>
+<br>
+<a class=""="c" href=""></a>
+{% endblock %}
+{% block footer %}
+{% endblock  %}

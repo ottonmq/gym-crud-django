@@ -1,0 +1,81 @@
+   {% extends 'core/base.html' %}
+{% block title %}
+{% endblock %}
+{% block navbar2 %}
+{% endblock %}
+{% block slider %}
+{% endblock %}
+{% block contenido %}
+      <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a 
+            href="{% url 'home' %}"
+            >Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Noticias</li>
+          </ol>
+        </nav>
+<section class="portfolio" id="portfolio">
+      <div class="container">
+        <h2 class="text-center text-uppercase text-secondary mb-0"></h2>
+        <hr class="star-dark mb-5">
+       <div class="row">
+             {% for a in object_list %}
+          <div class="card col-md-6 col-lg-4" style="width: 18rem;">
+            <div class="card-body">
+              
+              <h6 class="card-subtitle mb-2 text-muted">{{a.info}}</h6>
+              <p class="card-text">{{a.info}}</p>
+               
+            </div>
+          </div>
+          {%empty%}
+            <h1>No hay entrenamientos :(</h1>
+          {%endfor%}
+         
+
+       </div>
+      </div>
+    </section>
+    
+    <style>
+
+   
+    a {
+        text-decoration: none;
+        color: Whitesnake;
+    }
+    a:hover {
+        text-decoration: underline;
+        color: #0082AC;
+    }
+    </style>
+    <br>
+        <div class="pagination">
+            <span class="step-links">
+                {% if page_obj.has_previous %}
+                    <a
+                    class="btn btn-success btn-sm"
+                    href="?page=1">&laquo; primera</a>
+                    <a
+                    class="btn btn-info btn-sm"
+                    href="?page={{ page_obj.previous_page_number }}">anterior</a>
+                {% endif %}
+
+                <span class="current">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                </span>
+
+                {% if page_obj.has_next %}
+                    <a 
+                    class="btn btn-primary btn-sm"
+                    href="?page={{ page_obj.next_page_number }}">siguiente</a>
+                    <a
+                    class="btn btn-warning btn-sm"
+                    href="?page={{ page_obj.paginator.num_pages }}">última &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
+    </div>
+    
+  
+{% endblock contenido %}

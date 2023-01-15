@@ -1,0 +1,34 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block navbar2 %}
+{% endblock %}
+{% block slider %}
+{% endblock %}
+{% block contenido %}
+    <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a
+            href="{% url 'home' %}"
+            >Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Galería</li>
+          </ol>
+        </nav>
+
+        <div class="galeria">
+
+            <a data-fancybox="gallery" href="{% static 'core/img/gym2.jpeg' %}"><img src="{% static 'core/img/gym2.jpeg' %}"></a>
+              <br>
+              <br>
+            <a data-fancybox="gallery" href="{% static 'core/img/gym3.jpeg' %}"><img src="{% static 'core/img/gym3.jpeg' %}"></a>
+            <br>
+            <br>
+            <a data-fancybox="gallery" href="{% static 'core/img/gym3.jpeg' %}"><img src="{% static 'core/img/gym3.jpeg' %}"></a>
+          
+            
+        </div>
+        
+        
+        
+        
+        
+{% endblock contenido %}

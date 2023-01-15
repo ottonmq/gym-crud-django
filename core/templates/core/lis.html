@@ -1,0 +1,43 @@
+   {% extends 'core/base.html' %}
+
+{% block title %}
+{% endblock %}
+{% block navbar2 %}
+{% endblock %}
+{% block slider %}
+{% endblock %}
+{% block contenido %}
+    <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li classitem"><a hre
+            href="{% url 'home' %}"
+            >Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Servicios</li>
+          </ol>
+        </nav>
+
+  
+<section class="portfolio" id="portfolio">
+      <div class="container">
+        <h2 class="text-center text-uppercase text-secondary mb-0"></h2>
+       
+       <div class="row">
+             {% for a in object_list %}
+          <div class="card col-md-6 col-lg-4" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">{{a.entrenamiento}}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">{{a.precio}}</h6>
+              <p class="card-text">{{a.horario}}</p>
+              
+            </div>
+          </div>
+          {%empty%}
+            <h1>No hay entrenamientos :(</h1>
+          {%endfor%}
+         
+
+       </div>
+      </div>
+    </section>
+  
+{% endblock contenido %}
